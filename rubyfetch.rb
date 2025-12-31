@@ -16,25 +16,26 @@ mins  = (total_sec % 3600) / 60
 info = [
   hostname,
   separator,
-  "#{X}os     #{Y} #{`lsb_release -sd`.strip.delete('"')}",
-  "#{X}host   #{Y} #{File.read('/sys/devices/virtual/dmi/id/product_name').strip}",
-  "#{X}kernel #{Y} #{`uname -r`.strip}",
-  "#{X}uptime #{Y} #{hours} hours, #{mins} mins",
-  "#{X}shell  #{Y} #{shell}"
+  "#{X} OS     -> #{Y}#{`lsb_release -sd`.strip.delete('"')}",
+  "#{X}󰇄 Host   -> #{Y}#{File.read('/sys/devices/virtual/dmi/id/product_name').strip}",
+  "#{X} Kernel -> #{Y}#{`uname -r`.strip}",
+  "#{X} Uptime -> #{Y}#{hours} hours, #{mins} mins",
+  "#{X} Shell  -> #{Y}#{shell}",
+  "#{X} Ruby   -> #{Y}#{RUBY_VERSION}"
 ]
 
 ascii = [
-  "#{X}         ###.=##%%%    #{Y}",
-  "#{X}      #######..%%%%%   #{Y}",
-  "#{X}    #############%%%   #{Y}",
-  "#{X}  *############%%%%%   #{Y}",
-  "#{X} %%%%#####.:#%%%%%%%   #{Y}",
-  "#{X} #%%%%%#-****%%%%%%%   #{Y}",
-  "#{X}:=*#%% ######%%%%%%    #{Y}",
-  "#{X}*=:--=%%%%%%%%%%%%#    #{Y}",
-  "#{X}%#***#%%%%%%%%%%%%#    #{Y}",
-  "#{X}%%%##%%%%%%%#####%%    #{Y}",
-  "#{X} %%#%%%%%%%%%%%%#      #{Y}"
+  "#{X}         XXX.+X$$$$    #{Y}",
+  "#{X}      $$$XXXX..$$$$$   #{Y}",
+  "#{X}    $$$$$$$XXXXXX$$$   #{Y}",
+  "#{X}  x$$$$$$$$$$$$$$$$$   #{Y}",
+  "#{X} $$$$$$$$$.:X$$$$$$$   #{Y}",
+  "#{X} X$$$$$$;xxxx$$$$$$$   #{Y}",
+  "#{X}:+xX$$ $$$$$$$$$$$$    #{Y}",
+  "#{X}X+::;;$$$$$$$$$$$$$    #{Y}",
+  "#{X}$$xxxX$$$$$$$$$$$$X    #{Y}",
+  "#{X}$$$X$$$$$$$$$XXXX$$    #{Y}",
+  "#{X} $$$$$$$$$$$$$$$$      #{Y}"
 ]
 
 top_padding = [(ascii.size - info.size) / 2, 0].max
